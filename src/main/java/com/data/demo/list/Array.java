@@ -5,12 +5,12 @@ package com.data.demo.list;
  * @edit:
  * @created:2019/7/3
  */
-public class Array {
-    int[] data;
-    int size;
+public class Array<E> {
+    private E[] data;
+    private int size;
 
     public Array(int capacity) {
-        data = new int[capacity];
+        data = (E[]) new Object[capacity];
         size = 0;
     }
 
@@ -30,16 +30,16 @@ public class Array {
         return size == 0;
     }
 
-    public void addFirst(int e) throws IllegalAccessException {
+    public void addFirst(E e) throws IllegalAccessException {
         add(0, e);
     }
 
-    public void addLast(int e) throws IllegalAccessException {
+    public void addLast(E e) throws IllegalAccessException {
         add(size, e);
     }
 
     //第index元素插入新元素e
-    public void add(int index, int e) throws IllegalAccessException {
+    public void add(int index, E e) throws IllegalAccessException {
         if (size == data.length) {
             throw new IllegalAccessException("fail");
         }
@@ -53,27 +53,65 @@ public class Array {
         size++;
     }
 
-    int get(int index) throws IllegalAccessException {
+    public E get(int index) throws IllegalAccessException {
         if (index < 0 || index >= size) {
             throw new IllegalAccessException("fail");
         }
         return data[index];
     }
 
-    void set(int index, int e) throws IllegalAccessException {
+    void set(int index, E e) throws IllegalAccessException {
         if (index < 0 || index >= size) {
             throw new IllegalAccessException("fail");
         }
         data[index] = e;
     }
 
-    public boolean contains(int e) {
+    public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
-            if (data[i] == e) {
+            if (data[i].equals(e)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public int find(E e) {
+        for (int i = 0; i < size; i++) {
+            if (data[i].equals(e)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public E remove(int index) throws IllegalAccessException {
+        if (index < 0 || index >= size) {
+            throw new IllegalAccessException("fail");
+        }
+        E ret = data[index];
+        for (int i = index + 1; i < size; i++) {
+            data[i - 1] = data[i];
+        }
+        size--;
+        data[size] = null;//loitering objects
+        return ret;
+    }
+
+    public E removeFirst() throws IllegalAccessException {
+        return remove(0);
+    }
+
+    private E removeLast() throws IllegalAccessException {
+        return remove(size - 1);
+    }
+
+    public void removeElement(E e) throws IllegalAccessException {
+        int index = find(e);
+        if (index != -1) {
+            remove(index);
+        }
     }
 
     @Override
