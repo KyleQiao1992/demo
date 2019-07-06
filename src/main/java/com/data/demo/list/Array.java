@@ -40,11 +40,11 @@ public class Array<E> {
 
     //第index元素插入新元素e
     public void add(int index, E e) throws IllegalAccessException {
-        if (size == data.length) {
-            throw new IllegalAccessException("fail");
-        }
         if (index < 0 || index > size) {
             throw new IllegalAccessException("fail");
+        }
+        if (size == data.length) {
+            resize(2 * size);
         }
         for (int i = size - 1; i >= index; i--) {
             data[i + 1] = data[i];
@@ -95,7 +95,10 @@ public class Array<E> {
             data[i - 1] = data[i];
         }
         size--;
-        data[size] = null;//loitering objects
+        data[size] = null;//loitering objects != memory leak
+        if (size == data.length / 2) {
+            resize(data.length / 2);
+        }
         return ret;
     }
 
@@ -127,5 +130,13 @@ public class Array<E> {
         }
         res.append("]");
         return res.toString();
+    }
+
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 }
