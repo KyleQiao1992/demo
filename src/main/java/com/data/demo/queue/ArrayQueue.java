@@ -1,18 +1,21 @@
-package com.data.demo.list;
+package com.data.demo.queue;
+
+import com.data.demo.list.Array;
+import com.data.demo.queue.Queue;
 
 /**
  * @author: qiaoyi
  * @edit:
- * @created:2019/7/15
+ * @created:2019/7/18
  */
-public class ArrayStack<E> implements Stack<E> {
-    Array<E> array;
+public class ArrayQueue<E> implements Queue<E> {
+    private Array<E> array;
 
-    public ArrayStack(int capacity) {
+    public ArrayQueue(int capacity) {
         array = new Array<>(capacity);
     }
 
-    public ArrayStack() {
+    public ArrayQueue() {
         array = new Array<>();
     }
 
@@ -26,37 +29,33 @@ public class ArrayStack<E> implements Stack<E> {
         return array.isEmpty();
     }
 
-    public int getCapacity() {
-        return array.getCapacity();
-    }
-
     @Override
-    public void push(E e) {
+    public void enqueue(E e) {
         array.addLast(e);
     }
 
     @Override
-    public E pop() {
-        return array.removeLast();
+    public E dequeue() {
+        return array.removeFirst();
     }
 
     @Override
-    public E peak() {
-        return array.getLast();
+    public E getFront() {
+        return array.getFirst();
     }
 
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append("Stack: ");
-        res.append("[");
+        res.append("Queue: ");
+        res.append("front [");
         for (int i = 0; i < getSize(); i++) {
             res.append(array.get(i));
             if (i != array.getSize() - 1) {
                 res.append(", ");
             }
         }
-        res.append("] top");
+        res.append("] tail");
         return res.toString();
     }
 }

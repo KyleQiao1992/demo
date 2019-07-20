@@ -1,8 +1,7 @@
 package com.data.demo.leecode;
 
+import com.data.demo.leecode.array._485_max_conseccutive_ones;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author: qiaoyi

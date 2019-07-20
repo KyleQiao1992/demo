@@ -1,4 +1,4 @@
-package com.data.demo.list;
+package com.data.demo.stack;
 
 public interface Stack<E> {
 
