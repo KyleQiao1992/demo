@@ -1,7 +1,5 @@
 package com.data.demo.leecode.stack;
 
-
-import java.util.Enumeration;
 import java.util.Stack;
 
 /**
