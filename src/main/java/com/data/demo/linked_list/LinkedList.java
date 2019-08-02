@@ -94,7 +94,21 @@ public class LinkedList<E> {
         return false;
     }
 
-    
+    //删除第index(0-based)个位置的元素为e
+    public E remove(int index) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("Add failed.  Illegal index");
+        }
+        Node prev = dummyHead;
+        for (int i = 0; i < index; i++) {
+            prev = prev.next;
+        }
+        Node retNode = prev.next;
+        prev.next = retNode.next;
+        retNode.next = null;
+        size--;
+        return retNode.e;
+    }
 
     @Override
     public String toString() {
