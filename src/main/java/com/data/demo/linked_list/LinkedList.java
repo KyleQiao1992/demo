@@ -1,5 +1,7 @@
 package com.data.demo.linked_list;
 
+import com.data.demo.common.Node;
+
 public class LinkedList<E> {
 
     private Node dummyHead;
@@ -41,7 +43,7 @@ public class LinkedList<E> {
 //            Node node = new Node(e);
 //            node.next = prev.next;
 //            prev.next = node;
-        prev.next = new Node(e, prev.next);
+        prev.next = new Node<>(e, prev.next);
         size++;
 
     }
@@ -55,7 +57,7 @@ public class LinkedList<E> {
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
-        return cur.e;
+        return (E) cur.e;
     }
 
     public E getFirst() {
@@ -107,7 +109,11 @@ public class LinkedList<E> {
         prev.next = retNode.next;
         retNode.next = null;
         size--;
-        return retNode.e;
+        return (E)retNode.e;
+    }
+
+    public E removeFirst() {
+        return remove(0);
     }
 
     @Override
@@ -120,28 +126,5 @@ public class LinkedList<E> {
         }
         sb.append("NULL");
         return sb.toString();
-    }
-
-    private class Node {
-        public E e;
-        public Node next;
-
-        public Node(E e, Node next) {
-            this.e = e;
-            this.next = next;
-        }
-
-        public Node(E e) {
-            this(e, null);
-        }
-
-        public Node() {
-            this(null, null);
-        }
-
-        @Override
-        public String toString() {
-            return e.toString();
-        }
     }
 }
