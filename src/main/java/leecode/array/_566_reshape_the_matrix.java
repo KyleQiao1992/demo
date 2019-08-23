@@ -1,4 +1,4 @@
-package com.data.demo.leecode.array;
+package leecode.array;
 
 /**
  * @author: qiaoyi

@@ -1,6 +1,6 @@
 package com.data.demo.leecode;
 
-import com.data.demo.leecode.array._283_moveZeroes;
+import leecode.array._283_moveZeroes;
 import org.junit.Test;
 
 /**

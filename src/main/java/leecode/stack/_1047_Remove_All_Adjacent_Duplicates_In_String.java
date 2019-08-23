@@ -1,4 +1,4 @@
-package com.data.demo.leecode.stack;
+package leecode.stack;
 
 import java.util.Stack;
 
