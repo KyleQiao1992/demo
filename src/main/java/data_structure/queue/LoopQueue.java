@@ -1,4 +1,4 @@
-package com.data.demo.queue;
+package data_structure.queue;
 
 public class LoopQueue<E> implements Queue<E> {
     private E[] data;

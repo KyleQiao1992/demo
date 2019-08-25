@@ -1,4 +1,4 @@
-package com.data.demo.stack;
+package data_structure.stack;
 
 public interface Stack<E> {
 

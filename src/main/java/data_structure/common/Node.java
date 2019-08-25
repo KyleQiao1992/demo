@@ -1,4 +1,4 @@
-package com.data.demo.common;
+package data_structure.common;
 
 public class Node<E> {
     public E e;

@@ -1,4 +1,4 @@
-package com.data.demo.queue;
+package data_structure.queue;
 
 /**
  * @author: qiaoyi

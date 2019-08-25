@@ -1,7 +1,6 @@
-package com.data.demo.queue;
+package data_structure.queue;
 
-import com.data.demo.list.Array;
-import com.data.demo.queue.Queue;
+import data_structure.list.Array;
 
 /**
  * @author: qiaoyi

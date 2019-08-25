@@ -1,6 +1,6 @@
-package com.data.demo.stack;
+package data_structure.stack;
 
-import com.data.demo.linked_list.LinkedList;
+import data_structure.linked_list.LinkedList;
 
 public class LinkedListStack<E> implements Stack<E> {
 

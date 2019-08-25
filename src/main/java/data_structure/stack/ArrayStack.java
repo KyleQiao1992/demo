@@ -1,7 +1,6 @@
-package com.data.demo.stack;
+package data_structure.stack;
 
-import com.data.demo.list.Array;
-import com.data.demo.stack.Stack;
+import data_structure.list.Array;
 
 /**
  * @author: qiaoyi

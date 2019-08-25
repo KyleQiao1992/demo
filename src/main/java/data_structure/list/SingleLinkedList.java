@@ -1,4 +1,4 @@
-package com.data.demo.list;
+package data_structure.list;
 
 /**
  * @author: qiaoyi

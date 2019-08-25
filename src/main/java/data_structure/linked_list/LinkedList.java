@@ -1,6 +1,6 @@
-package com.data.demo.linked_list;
+package data_structure.linked_list;
 
-import com.data.demo.common.Node;
+import data_structure.common.Node;
 
 public class LinkedList<E> {
 

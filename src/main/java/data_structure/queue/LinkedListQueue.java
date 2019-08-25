@@ -1,6 +1,6 @@
-package com.data.demo.queue;
+package data_structure.queue;
 
-import com.data.demo.common.Node;
+import data_structure.common.Node;
 
 public class LinkedListQueue<E> implements Queue<E> {
 
