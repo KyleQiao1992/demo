@@ -1,4 +1,4 @@
-package algorism.search;
+package algorism.sort;
 
 public class InsertionSort {
     public static void sort(Comparable[] arr) {
