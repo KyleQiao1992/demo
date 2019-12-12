@@ -38,11 +38,34 @@ public class _328_odd_even_linked_list {
     }
 
     public static ListNode oddEvenList2(ListNode head) {
-        return null;
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode oddHead = new ListNode(head.val);
+        ListNode evenHead = new ListNode(head.next.val);
+        ListNode curOdd = oddHead;
+        ListNode curEven = evenHead;
+
+        ListNode cur = head.next.next;
+        int i = 3;
+        while (cur != null) {
+            if (i % 2 == 1) {
+                curOdd.next = new ListNode(cur.val);
+                curOdd = curOdd.next;
+            } else {
+                curEven.next = new ListNode(cur.val);
+                curEven = curEven.next;
+            }
+            i++;
+            cur = cur.next;
+        }
+        curOdd.next = evenHead;
+        return oddHead;
     }
 
     public static void main(String[] args) {
         ListNode testNode = ListNode.buildListNode(Arrays.asList(2, 1, 3, 5, 6, 4, 7));
-        oddEvenList1(testNode);
+        ListNode head = oddEvenList2(testNode);
+        int a = 0;
     }
 }
