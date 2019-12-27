@@ -34,7 +34,7 @@ public class _234_palindrome_linked_list {
     }
 
     //快慢指针
-    //不使用辅助内存空间,逆至前半部分链表
+    //逆至后半部分链表
     public static boolean isPalindrome2(ListNode head) {
         if (head == null) {
             return true;
@@ -67,7 +67,6 @@ public class _234_palindrome_linked_list {
         }
         return true;
     }
-
 
     public static void main(String[] args) {
         ListNode head = ListNode.buildListNode(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
