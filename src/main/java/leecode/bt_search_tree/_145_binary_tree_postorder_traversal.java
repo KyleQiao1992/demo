@@ -6,16 +6,6 @@ import java.util.Stack;
 
 public class _145_binary_tree_postorder_traversal {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     //way1 递归 后序遍历二叉树
     public List<Integer> postOrderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
