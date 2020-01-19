@@ -18,10 +18,12 @@ public class _102_binary_tree_level_order_traversal {
 
         while (!queue.isEmpty()) {
             int newLevelNum = 0;
-            List<Integer> levelList = new ArrayList<>();
+            List<Integer> tempList = new ArrayList<>();
+
             for (int i = 0; i < levelNum; i++) {
                 TreeNode node = queue.remove();
-                levelList.add(node.val);
+                tempList.add(node.val);
+
                 if (node.left != null) {
                     queue.add(node.left);
                     newLevelNum++;
@@ -31,7 +33,7 @@ public class _102_binary_tree_level_order_traversal {
                     newLevelNum++;
                 }
             }
-            res.add(levelList);
+            res.add(tempList);
             levelNum = newLevelNum;
         }
         return res;
