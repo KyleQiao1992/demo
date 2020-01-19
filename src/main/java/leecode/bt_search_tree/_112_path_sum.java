@@ -13,8 +13,8 @@ public class _112_path_sum {
 
         if (hasPathSum(root.left, sum - root.val)) {
             return true;
-
         }
+
         if (hasPathSum(root.right, sum - root.val)) {
             return true;
         }
