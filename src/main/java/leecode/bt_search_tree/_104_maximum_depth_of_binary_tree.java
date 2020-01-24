@@ -14,5 +14,6 @@ public class _104_maximum_depth_of_binary_tree {
 
     //way2 非递归
     public int maxDepth2(TreeNode root) {
+        return 0;
     }
 }
