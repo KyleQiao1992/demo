@@ -8,9 +8,9 @@ public class _454_sum_ii {
             throw new IllegalArgumentException("Illegal argument");
 
         HashMap<Integer, Integer> mapAB = new HashMap<Integer, Integer>();
-        for (int i = 0; i < A.length; i++)
-            for (int j = 0; j < B.length; j++) {
-                int sum = A[i] + B[j];
+        for (int item : A)
+            for (int value : B) {
+                int sum = item + value;
                 if (mapAB.containsKey(sum))
                     mapAB.put(sum, mapAB.get(sum) + 1);
                 else
@@ -18,9 +18,9 @@ public class _454_sum_ii {
             }
 
         HashMap<Integer, Integer> mapCD = new HashMap<Integer, Integer>();
-        for (int i = 0; i < C.length; i++)
-            for (int j = 0; j < D.length; j++) {
-                int sum = C[i] + D[j];
+        for (int item : C)
+            for (int value : D) {
+                int sum = item + value;
                 if (mapCD.containsKey(sum))
                     mapCD.put(sum, mapCD.get(sum) + 1);
                 else
