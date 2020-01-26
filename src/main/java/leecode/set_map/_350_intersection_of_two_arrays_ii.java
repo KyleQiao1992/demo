@@ -1,4 +1,4 @@
-package leecode.set;
+package leecode.set_map;
 
 import java.util.ArrayList;
 import java.util.HashMap;

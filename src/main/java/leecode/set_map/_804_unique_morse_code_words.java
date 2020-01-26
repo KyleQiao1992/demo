@@ -1,7 +1,6 @@
-package leecode.set;
+package leecode.set_map;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class _804_unique_morse_code_words {
