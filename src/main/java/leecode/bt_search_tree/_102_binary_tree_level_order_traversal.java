@@ -38,4 +38,25 @@ public class _102_binary_tree_level_order_traversal {
         }
         return res;
     }
+
+    public static List<List<Integer>> levelOrderBottom2(TreeNode root) {
+        List<List<Integer>> levelOrderBottom = new ArrayList<>();
+        if (root != null) {
+            levelOrderBottom2(root, 0, levelOrderBottom);
+        }
+        return levelOrderBottom;
+    }
+
+    private static void levelOrderBottom2(TreeNode root, int depth, List<List<Integer>> traversal) {
+        if (depth == traversal.size()) {
+            traversal.add(depth, new ArrayList<>());
+        }
+        traversal.get(depth).add(root.val);
+        if (root.left != null) {
+            levelOrderBottom2(root.left, depth + 1, traversal);
+        }
+        if (root.right != null) {
+            levelOrderBottom2(root.right, depth + 1, traversal);
+        }
+    }
 }
