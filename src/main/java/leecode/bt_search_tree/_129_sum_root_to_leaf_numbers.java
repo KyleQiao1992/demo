@@ -5,7 +5,7 @@ import java.util.List;
 
 public class _129_sum_root_to_leaf_numbers {
     /**
-     * 方法1 参考leetcode113题的list解法
+     * 方法1 参考leetcode-237题的list解法
      *
      * @param root
      * @return
@@ -44,10 +44,39 @@ public class _129_sum_root_to_leaf_numbers {
         return result;
     }
 
+    private static Integer sumResult = 0;
+
+    /**
+     * 方法2 递归方式
+     *
+     * @param root
+     * @return
+     */
+    public int sumNumbers2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        dfs(root, 0);
+        return sumResult;
+    }
+
+    private void dfs(TreeNode node, int tnum) {
+        tnum = tnum * 10 + node.val;
+        if (node.left == null && node.right == null) {
+            sumResult += tnum + node.val;
+        }
+        if (node.left != null) {
+            dfs(node.left, tnum);
+        }
+        if (node.right != null) {
+            dfs(node.right, tnum);
+        }
+    }
+
     public static void main(String[] args) {
-        Integer[] list = {0, 9, 0, 5, 1};
+        Integer[] list = {4, 9, 0, 5, 1};
         TreeNode node = TreeNode.constructTree(list);
         _129_sum_root_to_leaf_numbers a = new _129_sum_root_to_leaf_numbers();
-        a.sumNumbers(node);
+        a.sumNumbers2(node);
     }
 }
