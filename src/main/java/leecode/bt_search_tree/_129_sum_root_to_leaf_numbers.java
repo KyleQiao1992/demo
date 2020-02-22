@@ -44,7 +44,7 @@ public class _129_sum_root_to_leaf_numbers {
         return result;
     }
 
-    private static Integer sumResult = 0;
+    private Integer sumResult = 0;
 
     /**
      * 方法2 递归方式
@@ -63,7 +63,7 @@ public class _129_sum_root_to_leaf_numbers {
     private void dfs(TreeNode node, int tnum) {
         tnum = tnum * 10 + node.val;
         if (node.left == null && node.right == null) {
-            sumResult += tnum + node.val;
+            sumResult += tnum;
         }
         if (node.left != null) {
             dfs(node.left, tnum);
@@ -74,7 +74,7 @@ public class _129_sum_root_to_leaf_numbers {
     }
 
     public static void main(String[] args) {
-        Integer[] list = {4, 9, 0, 5, 1};
+        Integer[] list = {4,9,0,5,1};
         TreeNode node = TreeNode.constructTree(list);
         _129_sum_root_to_leaf_numbers a = new _129_sum_root_to_leaf_numbers();
         a.sumNumbers2(node);
