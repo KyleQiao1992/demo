@@ -15,15 +15,13 @@ public class _257_binary_tree_paths {
 
         List<String> leftPaths = binaryTreePaths(root.left);
         for (String s : leftPaths) {
-            String sb = Integer.toString(root.val) + "->" +
-                    s;
+            String sb = Integer.toString(root.val) + "->" + s;
             res.add(sb);
         }
 
         List<String> rightPaths = binaryTreePaths(root.right);
         for (String s : rightPaths) {
-            String sb = Integer.toString(root.val) + "->" +
-                    s;
+            String sb = Integer.toString(root.val) + "->" + s;
             res.add(sb);
         }
         return res;
