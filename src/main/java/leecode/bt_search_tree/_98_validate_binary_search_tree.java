@@ -48,4 +48,9 @@ public class _98_validate_binary_search_tree {
         }
         return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
     }
+
+    public boolean isValidBST2(TreeNode root) {
+
+    }
+
 }

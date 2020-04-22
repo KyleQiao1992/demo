@@ -10,23 +10,22 @@ public class _108_convert_sorted_array_to_binary_tree {
     public static TreeNode sortedArrayToBST(int[] nums) {
         int top = (nums.length) - 1;
         int bottom = 0;
-        int mid = -1;
-        return dfs(bottom, top, mid, nums);
+        return dfs(bottom, top, nums);
     }
 
-    public static TreeNode dfs(int bottom, int top, int mid, int[] nums) {
+    public static TreeNode dfs(int bottom, int top, int[] nums) {
         if (bottom > top) {
             return null;
         }
-        mid = (bottom + top) / 2;
+        int mid = (bottom + top) / 2;
         TreeNode temp = new TreeNode(nums[mid]);
-        temp.left = dfs(bottom, mid - 1, mid, nums);
-        temp.right = dfs(mid + 1, top, mid, nums);
+        temp.left = dfs(bottom, mid - 1, nums);
+        temp.right = dfs(mid + 1, top, nums);
         return temp;
     }
 
     public static void main(String[] args) {
-        int[] a = {-10, -3, 0, 5, 9};
+        int[] a = {-10, -4, -3, 0, 5, 7, 9};
         TreeNode root = sortedArrayToBST(a);
     }
 }

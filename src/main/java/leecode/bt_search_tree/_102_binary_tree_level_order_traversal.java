@@ -59,4 +59,10 @@ public class _102_binary_tree_level_order_traversal {
             levelOrderBottom2(root.right, depth + 1, traversal);
         }
     }
+
+    public static void main(String[] args) {
+        Integer[] num = {1, 2, 3, 4, 5, 6, 7};
+        TreeNode node = TreeNode.constructTree(num);
+        levelOrderBottom2(node);
+    }
 }
