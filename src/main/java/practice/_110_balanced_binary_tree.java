@@ -1,6 +1,9 @@
-package leecode.bt_search_tree;
+package practice;
+
+import leecode.bt_search_tree.TreeNode;
 
 public class _110_balanced_binary_tree {
+
     private static boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
@@ -22,8 +25,8 @@ public class _110_balanced_binary_tree {
     }
 
     public static void main(String[] args) {
-        Integer[] nums = {1, 2, 2, 3, 3, null, null, 4, 4};
-        TreeNode root = TreeNode.constructTree(nums);
-        isBalanced(root);
+        Integer[] a = {1, 2, 2, 3, 3, null, null, 4, 4};
+        TreeNode node = TreeNode.constructTree(a);
+        isBalanced(node);
     }
 }
