@@ -53,7 +53,8 @@ public class _46_permutations {
 
         int[] nums = {1, 2, 3};
         List<List<Integer>> res = (new _46_permutations()).permute(nums);
-        for (List<Integer> list : res)
+        for (List<Integer> list : res) {
             printList(list);
+        }
     }
 }
