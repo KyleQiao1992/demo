@@ -12,8 +12,9 @@ public class _46_permutations {
     public List<List<Integer>> permute(int[] nums) {
 
         res = new ArrayList<List<Integer>>();
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return res;
+        }
 
         used = new boolean[nums.length];
         LinkedList<Integer> p = new LinkedList<Integer>();
@@ -22,6 +23,8 @@ public class _46_permutations {
         return res;
     }
 
+    //p中保存了一个有index元素的排列
+    //向这个排列的末尾添加第index+1个元素，获得一个有index+1的元素的排列
     private void generatePermutation(int[] nums, int index, LinkedList<Integer> p) {
 
         if (index == nums.length) {
