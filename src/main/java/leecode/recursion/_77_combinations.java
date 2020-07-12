@@ -27,13 +27,14 @@ public class _77_combinations {
             res.add((List<Integer>) c.clone());
             return;
         }
-
-        for (int i = start; i <= n; i++) {
+        // 进入到递归中,组合中一共有k个元素, 还有k-c.size()个空位
+        // 所以，[i...n]中至少要有k-c.size()个元素
+        // i最多为n-(k-c.size())+1
+        for (int i = start; i <= n - (k - c.size()) + 1; i++) {
             c.addLast(i);
             generateCombinations(n, k, i + 1, c);
             c.removeLast();
         }
-
         return;
     }
 }

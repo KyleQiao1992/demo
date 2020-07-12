@@ -26,8 +26,9 @@ public class _46_permutations {
     //p中保存了一个有index元素的排列
     //向这个排列的末尾添加第index+1个元素，获得一个有index+1的元素的排列
     private void generatePermutation(int[] nums, int index, LinkedList<Integer> p) {
-
+        System.out.println("__________index: " + index + ",p=" + p.toString());
         if (index == nums.length) {
+            System.out.println("get result:" + ((LinkedList<Integer>) p.clone()).toString());
             res.add((LinkedList<Integer>) p.clone());
             return;
         }
@@ -37,6 +38,7 @@ public class _46_permutations {
                 used[i] = true;
                 p.addLast(nums[i]);
                 generatePermutation(nums, index + 1, p);
+                System.out.println("remove begin : nums = " + ((LinkedList<Integer>) p.clone()).toString() + " i=" + i);
                 p.removeLast();
                 used[i] = false;
             }
@@ -51,7 +53,7 @@ public class _46_permutations {
 
     public static void main(String[] args) {
 
-        int[] nums = {1, 2, 3};
+        int[] nums = {1, 2, 3, 4};
         List<List<Integer>> res = (new _46_permutations()).permute(nums);
         for (List<Integer> list : res) {
             printList(list);
