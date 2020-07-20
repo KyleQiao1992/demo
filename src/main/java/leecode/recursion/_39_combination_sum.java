@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class _39_combination_sum {
-
     List<List<Integer>> res = new ArrayList<>();
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
@@ -18,33 +17,34 @@ public class _39_combination_sum {
         return res;
     }
 
-    private void dfs(int[] candidates, int index, LinkedList<Integer> p, int target) {
+    private void dfs(int[] candidates, Integer index, LinkedList<Integer> p, int target) {
         Integer sum = 0;
-        for (Integer x : p) {
-            sum += x;
+        for (Integer t : p) {
+            sum += t;
         }
         if (sum == target) {
-            res.add((List<Integer>) p.clone());
+            res.add(new LinkedList<>(p));
             return;
         }
         if (sum > target) {
             return;
         }
 
-        for (int i = index; i < candidates.length; i++) {
-            if (i != index && candidates[i] == candidates[i - 1]) {
+        for (int i = 0; i < candidates.length; i++) {
+            //如果当前的元素 小于p的最后一个元素，就会出现 2 3 2；3，2，2；这种情况
+            if (!p.isEmpty() && candidates[i] < p.getLast()) {
                 continue;
             }
             p.add(candidates[i]);
-            dfs(candidates, 0, p, target);
+            dfs(candidates, +1, p, target);
             p.removeLast();
         }
     }
 
     public static void main(String[] args) {
-        int[] a = {2, 3, 6, 7};
         _39_combination_sum f = new _39_combination_sum();
-        List<List<Integer>> res = f.combinationSum(a, 7);
+        int[] cadidates = {2, 3, 6, 7};
+        List<List<Integer>> res = f.combinationSum(cadidates, 7);
         System.out.println(res);
     }
 
