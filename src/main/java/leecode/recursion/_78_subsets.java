@@ -17,7 +17,7 @@ public class _78_subsets {
 
     private void dfs(int[] nums, int index, LinkedList<Integer> p) {
         if (p.size() <= nums.length) {
-            res.add((LinkedList<Integer>) p.clone());
+            res.add(new LinkedList<>(p));
         }
 
         for (int i = index; i < nums.length; i++) {

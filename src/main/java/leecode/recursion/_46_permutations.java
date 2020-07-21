@@ -29,7 +29,7 @@ public class _46_permutations {
         System.out.println("__________index: " + index + ",p=" + p.toString());
         if (index == nums.length) {
             System.out.println("get result:" + ((LinkedList<Integer>) p.clone()).toString());
-            res.add((LinkedList<Integer>) p.clone());
+            res.add(new LinkedList<>(p));
             return;
         }
 

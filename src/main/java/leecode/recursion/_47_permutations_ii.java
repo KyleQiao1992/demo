@@ -18,7 +18,7 @@ public class _47_permutations_ii {
 
     private void dfs(int[] nums, int index, LinkedList<Integer> p) {
         if (p.size() == nums.length) {
-            res.add((LinkedList<Integer>) p.clone());
+            res.add(new LinkedList<>(p));
             return;
         }
 

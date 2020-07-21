@@ -24,7 +24,7 @@ public class _77_combinations {
     private void generateCombinations(int n, int k, int start, LinkedList<Integer> c) {
 
         if (c.size() == k) {
-            res.add((List<Integer>) c.clone());
+            res.add(new LinkedList<>(c));
             return;
         }
         // 进入到递归中,组合中一共有k个元素, 还有k-c.size()个空位

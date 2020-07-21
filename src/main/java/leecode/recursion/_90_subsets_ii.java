@@ -19,7 +19,7 @@ public class _90_subsets_ii {
 
     private void dfs(int[] nums, int index, LinkedList<Integer> p) {
         if (p.size() <= nums.length) {
-            res.add((List<Integer>) p.clone());
+            res.add(new LinkedList<>(p));
         }
 
         for (int i = index; i < nums.length; i++) {
