@@ -1,4 +1,4 @@
-package leecode.recursion;
+package leecode.recursion.no70;
 
 import java.util.HashMap;
 import java.util.Map;
