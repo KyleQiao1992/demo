@@ -1,6 +1,6 @@
 package com.data.demo.leecode.array;
 
-import leecode.array._27_remove_element;
+import demo.leecode.array._27_remove_element;
 import org.junit.Test;
 
 /**

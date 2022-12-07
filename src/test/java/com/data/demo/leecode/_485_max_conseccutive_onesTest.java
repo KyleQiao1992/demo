@@ -1,6 +1,6 @@
 package com.data.demo.leecode;
 
-import leecode.array._485_max_conseccutive_ones;
+import demo.leecode.array._485_max_conseccutive_ones;
 import org.junit.Test;
 
 /**

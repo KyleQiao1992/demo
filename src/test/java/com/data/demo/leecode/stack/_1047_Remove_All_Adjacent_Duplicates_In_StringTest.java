@@ -1,6 +1,6 @@
 package com.data.demo.leecode.stack;
 
-import leecode.stack._1047_Remove_All_Adjacent_Duplicates_In_String;
+import demo.leecode.stack._1047_Remove_All_Adjacent_Duplicates_In_String;
 import org.junit.Test;
 
 /**
